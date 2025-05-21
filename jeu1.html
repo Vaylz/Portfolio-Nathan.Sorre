@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match Memory Game - 2 Joueurs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .game-container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            cursor: pointer;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card.flip .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .card-front {
+            background-color: #333;
+        }
+
+        .card-back {
+            background-color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        #restart-btn {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #restart-btn:hover {
+            background-color: #555;
+        }
+
+        .player-input {
+            margin-bottom: 20px;
+        }
+
+        .player-input input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        .player-input button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .player-input button:hover {
+            background-color: #555;
+        }
+
+        .scoreboard {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .scoreboard h2 {
+            color: #333;
+        }
+
+        #score-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #score-list li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .turn-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Color Match Memory Game - 2 Joueurs</h1>
+        <div class="player-input">
+            <input type="text" id="player1-name" placeholder="Nom Joueur 1">
+            <input type="text" id="player2-name" placeholder="Nom Joueur 2">
+            <button id="start-btn">Commencer</button>
+        </div>
+        <div class="turn-info" id="turn-info"></div>
+        <div id="game-board" class="game-board"></div>
+        <div class="stats">
+            <p>Coups : <span id="move-counter">0</span></p>
+            <p>Temps : <span id="timer">0s</span></p>
+            <button id="restart-btn">Recommencer</button>
+        </div>
+        <div class="scoreboard">
+            <h2>Tableau des scores</h2>
+            <ul id="score-list"></ul>
+        </div>
+    </div>
+    <script>
+        const gameBoard = document.getElementById('game-board');
+        const moveCounter = document.getElementById('move-counter');
+        const timerDisplay = document.getElementById('timer');
+        const restartBtn = document.getElementById('restart-btn');
+        const startBtn = document.getElementById('start-btn');
+        const player1NameInput = document.getElementById('player1-name');
+        const player2NameInput = document.getElementById('player2-name');
+        const turnInfo = document.getElementById('turn-info');
+        const scoreList = document.getElementById('score-list');
+
+        let colors = [
+            '#FF5733', '#FF5733', 
+            '#33FF57', '#33FF57', 
+            '#3357FF', '#3357FF', 
+            '#F333FF', '#F333FF', 
+            '#33FFF3', '#33FFF3', 
+            '#F3FF33', '#F3FF33', 
+            '#FF3380', '#FF3380', 
+            '#8033FF', '#8033FF'
+        ];
+
+        let shuffledColors = [];
+        let flippedCards = [];
+        let moves = 0;
+        let timer;
+        let seconds = 0;
+        let matchedPairs = 0;
+        let currentPlayer = 1;
+        let players = [
+            { name: '', moves: 0, points: 0, time: 0 },
+            { name: '', moves: 0, points: 0, time: 0 }
+        ];
+
+        function startGame() {
+            if (player1NameInput.value.trim() === '' || player2NameInput.value.trim() === '') {
+                alert('Veuillez entrer les noms des deux joueurs pour commencer.');
+                return;
+            }
+            players[0].name = player1NameInput.value.trim();
+            players[1].name = player2NameInput.value.trim();
+            currentPlayer = 1;
+            turnInfo.textContent = `Tour de ${players[currentPlayer - 1].name}`;
+            shuffledColors = shuffle(colors);
+            createCards();
+            resetStats();
+            startTimer();
+        }
+
+        function createCards() {
+            gameBoard.innerHTML = '';
+            shuffledColors.forEach(color => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front"></div>
+                        <div class="card-back" style="background-color: ${color};"></div>
+                    </div>
+                `;
+                card.addEventListener('click', flipCard);
+                gameBoard.appendChild(card);
+            });
+        }
+
+        function flipCard() {
+            if (flippedCards.length < 2 && !this.classList.contains('flip')) {
+                this.classList.add('flip');
+                flippedCards.push(this);
+
+                if (flippedCards.length === 2) {
+                    moves++;
+                    moveCounter.textContent = moves;
+                    checkForMatch();
+                }
+            }
+        }
+
+        function checkForMatch() {
+            const [card1, card2] = flippedCards;
+            const isMatch = card1.querySelector('.card-back').style.backgroundColor === 
+                            card2.querySelector('.card-back').style.backgroundColor;
+
+            if (isMatch) {
+                flippedCards = [];
+                matchedPairs++;
+                players[currentPlayer - 1].moves++;
+
+                if (matchedPairs === colors.length / 2) {
+                    clearInterval(timer);
+                    saveScore(currentPlayer - 1);
+                    alert(`Félicitations ${players[currentPlayer - 1].name} ! Vous avez gagné en ${moves} coups et en ${seconds} secondes.`);
+                    displayScores();
+                } else {
+                    switchPlayer();
+                }
+            } else {
+                setTimeout(() => {
+                    card1.classList.remove('flip');
+                    card2.classList.remove('flip');
+                    flippedCards = [];
+                    switchPlayer();
+                }, 1000);
+            }
+        }
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function startTimer() {
+            timer = setInterval(() => {
+                seconds++;
+                timerDisplay.textContent = `${seconds}s`;
+            }, 1000);
+        }
+
+        function resetStats() {
+            moves = 0;
+            moveCounter.textContent = moves;
+            seconds = 0;
+            timerDisplay.textContent = `${seconds}s`;
+            matchedPairs = 0;
+            flippedCards = [];
+            clearInterval(timer);
+        }
+
+        function switchPlayer() {
+            currentPlayer = currentPlayer === 1 ? 2 : 1;
+            turnInfo.textContent = `Tour de ${players[currentPlayer - 1].name}`;
+        }
+
+        function saveScore(playerIndex) {
+            players[playerIndex].time = seconds;
+            players[playerIndex].points = calculatePoints(players[playerIndex].moves, seconds);
+        }
+
+        function calculatePoints(moves, time) {
+            return Math.max(1000 - (moves * 10 + time), 0);
+        }
+
+        function displayScores() {
+            scoreList.innerHTML = '';
+            players.forEach((player, index) => {
+                const scoreItem = document.createElement('li');
+                scoreItem.textContent = `${index + 1}. ${player.name} - Points: ${player.points}, Coups: ${player.moves}, Temps: ${player.time}s`;
+                scoreList.appendChild(scoreItem);
+            });
+        }
+
+        startBtn.addEventListener('click', startGame);
+        restartBtn.addEventListener('click', startGame);
+    </script>
+</body>
+    
+</html>
