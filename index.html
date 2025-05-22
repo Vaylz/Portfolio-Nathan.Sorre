@@ -56,15 +56,17 @@
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">nathan</span>
+                            <span class="sr-only"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <h1 id="h1"><a href="/Portfolio-Nathan.Sorre/jeu1.html">Nathan SORRE</a></h1>
+                        <h1 id="h1"><a href="jeu1.html" style="color: whitesmoke; text-decoration: none;">Nathan
+                                SORRE</a></h1>
                         <style>
                             #h1 {
                                 padding: 12px 0px 0px;
+
                             }
                         </style>
                     </div>
@@ -165,32 +167,83 @@
                             </a>
                         </div>
 
-                        <div class="col-md-3 col-sm-6" style="width: 800px;">
+                        <div class="col-md-3 col-sm-6" style="width: 1500px;">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                                 <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4>Pourquoi le SIO ?</h4>
-                                    <p style="text-align: justify">J'ai choisi le BTS SIO parce que je suis passionné
-                                        par la création d'outils qui
-                                        facilitent la vie et par le développement de réseaux. J'aime l'idée de
-                                        construire des infrastructures qui grandissent et évoluent, tout en apportant
-                                        des solutions concrètes aux défis technologiques. Le SIO me permet de
-                                        transformer mes idées en projets réels, de voir l'impact de mon travail, et de
-                                        participer activement à l'innovation dans le domaine de l'informatique.</p>
-                                </div>
-                            </a>
-                        </div>
+                                    <h4>Présentation du BTS SIO ?</h4>
+                                    <p style="text-align: justify; width: 800px;">Le BTS SIO
+                                        SISR en alternance forme des
+                                        professionnels de l’informatique capables de gérer l’infrastructure des systèmes
+                                        et réseaux au sein des organisations. Les étudiants acquièrent des compétences
+                                        pour concevoir, mettre en place et assurer la maintenance des solutions
+                                        informatiques. L’alternance permet une immersion pratique en entreprise,
+                                        favorisant l’application des connaissances théoriques dans un contexte
+                                        professionnel.
 
-                        <div class="col-md-3 col-sm-6" style="width: 800px;">
-                            <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4>Depuis quand ?</h4>
-                                    <p style="text-align: justify">Je suis passionné par l'informatique depuis le lycée,
-                                        et c'est cette passion qui
-                                        m'a poussé vers le BTS SIO pour développer des compétences en création d'outils
-                                        et en réseaux.</p>
+                                        Les apprenants développent également des compétences en sécurité informatique et
+                                        en résolution de problèmes techniques. Ce cursus offre une formation complète
+                                        pour intégrer rapidement le monde professionnel de l’informatique.</p>
                                 </div>
+
+                                <style>
+                                    .image-gallery {
+                                      display: flex;
+                                      gap: 10px;
+                                      max-width: 960px;
+                                      margin: auto;
+                                    }
+                                    
+                                    .image-box {
+                                      position: relative;
+                                      flex: 1;
+                                      height: 300px; /* même hauteur pour tous */
+                                      overflow: hidden;
+                                      border-radius: 10px;
+                                      background-color: black; /* aide visuelle si image rate le fill */
+                                    }
+                                    
+                                    .image-box img {
+                                      width: 100%;
+                                      height: 100%;
+                                      object-fit: cover;
+                                      display: block;
+                                    }
+                                    
+                                    .image-caption {
+                                      position: absolute;
+                                      bottom: 10px;
+                                      left: 10px;
+                                      background-color: rgba(0, 0, 0, 0.6);
+                                      color: white;
+                                      padding: 6px 12px;
+                                      border-radius: 5px;
+                                      font-size: 16px;
+                                      text-decoration: none;
+                                      transition: background-color 0.3s;
+                                    }
+                                    
+                                    .image-caption:hover {
+                                      background-color: rgba(0, 0, 0, 0.8);
+                                    }
+                                    </style>
+                                    
+                                    <div class="image-gallery">
+                                      <div class="image-box">
+                                        <img src="/img/terminalDebian.png" alt="Image 1">
+                                        <a href="https://fr.wikipedia.org/wiki/Informatique" class="image-caption">Informatique</a>
+                                      </div>
+                                      <div class="image-box">
+                                        <img src="img/RJ45.png" alt="Image 2">
+                                        <a href="https://fr.wikipedia.org/wiki/R%C3%A9seau_informatique" class="image-caption">Réseaux</a>
+                                      </div>
+                                      <div class="image-box">
+                                        <img src="img/Cybersécurité.png" alt="Image 3">
+                                        <a href="https://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9_des_syst%C3%A8mes_d%27information" class="image-caption">Cybersécurité</a>
+                                      </div>
+                                    </div>
+                                    
+
                             </a>
                         </div>
 
@@ -221,8 +274,8 @@
 
                         <div class="col-md-3">
                             <div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
-                                <a class="btn btn-default btn-lg" href="Document(s)/CV Nathan Sorre.pdf"
-                                    target="_blank" role="button">Télécharger</a>
+                                <a class="btn btn-default btn-lg" href="Document(s)/CV Nathan Sorre.pdf" target="_blank"
+                                    role="button">Télécharger</a>
                             </div>
                         </div>
 
@@ -248,166 +301,309 @@
             </div>
             <!-- End page header-->
 
-            <!-- Begin roatet box-2 -->
+            <!-- Begin rotate box-2 ========================================================================================================================================
+            ========================================================================================================================================-->
             <div class="rotate-box-2-wrapper">
                 <div class="container">
                     <div class="row">
-                        <!---->
-                        <div class="col-md-3 col-sm-6" style="width: 410px;">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                <span class="rotate-box-icon"><i class="fa fa-mobile"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4>Installation et configuration des équipements et services réseaux</h4>
-                                    <p style="text-align: start;">
-                                        Installation et configuration de serveurs Debian pour des services réseau (web,
-                                        NAS, partage de fichiers).
-
-                                        Mise en place de systèmes de virtualisation pour l'optimisation des ressources.
-
-                                        Déploiement de services réseau essentiels (DNS, DHCP, partage de fichiers).
-
-                                        Paramétrage de switchs, routeurs et équipements réseau pour assurer la
-                                        connectivité.
-                                    </p>
+                        <!-- Card 1 -->
+                        <div class="col-md-3 col-sm-6 rotate-box-2 square-icon text-center wow zoomIn"
+                            data-wow-delay="0.6s"" style=" width: 410px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="rotate-box-icon"><i class="fa fa-mobile"></i></span>
+                                        <h4>Installation et configuration des équipements et services réseaux</h4>
+                                        <p style="text-align: start;">
+                                            Installation et configuration de serveurs Debian pour des services
+                                            réseau (web, NAS, partage de fichiers).<br>
+                                            Mise en place de systèmes de virtualisation pour l'optimisation des
+                                            ressources.<br>
+                                            Déploiement de services réseau essentiels (DNS, DHCP, partage de
+                                            fichiers).<br>
+                                            Paramétrage de switchs, routeurs et équipements réseau pour assurer la
+                                            connectivité.
+                                        </p>
+                                    </div>
+                                    <div class="flip-card-back" style="width: 410px; text-align: start;">
+                                        <p>
+                                        <ul>
+                                            <li>- Configuration d’adresses IP statiques/dynamiques</li>
+                                            <li>- Notions de routage et plan d’adressage</li>
+                                            <li>- Configuration de DNS interne</li>
+                                            <li>- Gestion d’Active Directory (utilisateurs, groupes, GPO)</li>
+                                            <li>- Gestion des unités d’organisation (OU)</li>
+                                            <li>- Configuration de serveurs web (Apache)</li>
+                                            <li>- Configuration et gestion de pare-feu (nftables)</li>
+                                            <li>- Virtualisation et Sauvegarde</li>
+                                            <li>- Proxmox VE</li>
+                                            <li>- Déploiement et gestion de machines virtuelles</li>
+                                        </ul>
+                                        </p>
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
-                        <!---->
-                        <div class="col-md-3 col-sm-6" style="width: 410px; margin-left: 350px;">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                <span class="rotate-box-icon"><i class="fa fa-pie-chart"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4>Administration et sécurisation des infrastructures</h4>
-                                    <p style="text-align: start;">
-                                        Gestion des utilisateurs, des droits d'accès et des stratégies de groupe (ADDS,
-                                        GPO).
-
-                                        Mise en place de politiques de sécurité réseau avec nftables et gestion de VLAN
-                                        pour segmenter le trafic.
-
-                                        Configuration de pare-feu, contrôle des accès, et durcissement des systèmes pour
-                                        protéger les données.
-
-                                        Supervision de l'activité réseau et gestion proactive des incidents avec
-                                        LibreNMS.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <!---->
-
-                        <div class="col-md-3 col-sm-6" style="width: 410px;">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                <span class="rotate-box-icon"><i class="fa fa-cloud"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4>Supervision et maintenance des systèmes</h4>
-                                    <p style="text-align: start;">
-                                        Mise en place de systèmes de supervision (LibreNMS) pour anticiper les pannes et
-                                        surveiller les performances.
-
-                                        Maintenance préventive et corrective, gestion des mises à jour, vérification de
-                                        l'intégrité des systèmes, optimisation des performances.
-
-                                        Sauvegarde et restauration des données pour assurer la continuité de service.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <!----> <br>
-                        <div class="col-md-3 col-sm-6" style="width: 410px; margin-left: 350px;">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                <span class="rotate-box-icon"><i class="fa fa-pencil"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4>Gestion de projets d'infrastructure</h4>
-                                    <p style="text-align: start;">
-                                        Déploiement de sites web Apache avec des scripts CGI pour le contrôle distant de
-                                        services (serveur ARK).
-
-                                        Mise en place de NAS sous Debian 12 avec NFS pour le stockage réseau partagé.
-
-                                        Création d'interfaces web sécurisées pour démarrer, arrêter et redémarrer des
-                                        services.
-
-                                        Rédaction de documentation technique et suivi de projets pour assurer la
-                                        conformité et la sécurité des déploiements.
-                                    </p>
-                                </div>
-                            </a>
+                            </div>
                         </div>
 
+                        <!-- Card 2 -->
+                        <div class="col-md-3 col-sm-6 rotate-box-2 square-icon text-center wow zoomIn"
+                            data-wow-delay="0.6s"" style=" width: 410px; margin-left: 350px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="rotate-box-icon"><i class="fa fa-pie-chart"></i></span>
+                                        <h4>Administration et sécurisation des infrastructures</h4>
+                                        <p style="text-align: start;">
+                                            Gestion des utilisateurs, des droits d'accès et des stratégies de groupe
+                                            (ADDS, GPO).<br>
+                                            Mise en place de politiques de sécurité réseau avec nftables et gestion
+                                            de VLAN.<br>
+                                            Configuration de pare-feu, durcissement des systèmes.<br>
+                                            Supervision de l'activité réseau avec LibreNMS.
+                                        </p>
+                                    </div>
+                                    <div class="flip-card-back" style="width: 410px; text-align: start;">
+                                        <p>
+                                        <ul>
+                                            <li>- Systèmes d’exploitation Linux (Debian/Ubuntu)</li>
+                                            <li>- Windows Server</li>
+                                            <li>- Gestion des droits et permissions</li>
+                                            <li>- Attribution et gestion des droits utilisateurs</li>
+                                            <li>- Paramétrage des droits et permissions</li>
+                                            <li>- Automatisation avec crontab</li>
+                                            <li>- Sauvegardes avec rsync</li>
+                                            <li>- Gestion des snapshots et sauvegardes avec Proxmox Backup Server (PBS)
+                                            </li>
+                                        </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-3 col-sm-6 rotate-box-2 square-icon text-center wow zoomIn"
+                            data-wow-delay="0.6s" style=" width: 410px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="rotate-box-icon"><i class="fa fa-cloud"></i></span>
+                                        <h4>Supervision et maintenance des systèmes</h4>
+                                        <p style="text-align: start;">
+                                            Mise en place de systèmes de supervision (LibreNMS).<br>
+                                            Maintenance préventive et corrective, gestion des mises à jour.<br>
+                                            Sauvegarde et restauration des données pour la continuité de service.
+                                        </p>
+                                    </div>
+                                    <div class="flip-card-back" style="width: 410px; text-align: start;">
+                                        <p>
+                                        <ul>
+                                            <li>- Paramétrage de la supervision réseau via SNMP</li>
+                                            <li>- Supervision de l’état réseau avec Centreon Zabbix</li>
+                                            <li>- Zabbix : ajout et configuration de sondes SNMP, d’agents, paramétrage
+                                                d’alerte</li>
+                                            <li>- Centreon : ajout et configuration de sondes SNMP, gestion de Pollers
+                                            </li>
+                                            <li>- Nagios : mise en place de services de supervision</li>
+                                            <li>- LogAnalyzer : analyse des journaux systèmes</li>
+                                            <li>- Gestion des services (systemctl, journalctl)</li>
+                                        </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="col-md-3 col-sm-6 rotate-box-2 square-icon text-center wow zoomIn"
+                            data-wow-delay="0.6s"" style=" width: 410px; margin-left: 350px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="rotate-box-icon"><i class="fa fa-pencil"></i></span>
+                                        <h4>Gestion de projets d'infrastructure</h4>
+                                        <p style="text-align: start;">
+                                            Déploiement de sites web Apache avec scripts CGI pour le contrôle
+                                            distant.<br>
+                                            NAS sous Debian 12 avec NFS.<br>
+                                            Interfaces web sécurisées pour les services.<br>
+                                            Rédaction de documentation technique.
+                                        </p>
+                                    </div>
+                                    <div class="flip-card-back" style="width: 410px; text-align: start;">
+                                        <p>
+                                        <ul>
+                                            <li>- Utilisation d’outils CLI : rsync, scp, ssh, nmap</li>
+                                            <li>- Écriture de scripts simples en Bash pour l’automatisation</li>
+                                        </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
             </div>
             <!-- End rotate-box-2 -->
+
+            <style>
+                .flip-card {
+                    background-color: transparent;
+                    width: 100%;
+                    height: 300px;
+                    perspective: 1000px;
+                }
+
+                .flip-card-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    transition: transform 0.6s;
+                    transform-style: preserve-3d;
+                }
+
+                .flip-card:hover .flip-card-inner {
+                    transform: rotateY(180deg);
+                }
+
+                .flip-card-front,
+                .flip-card-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 15px;
+
+                }
+
+                .flip-card-back p {
+                    max-height: 260px;
+                    overflow-y: auto;
+                    padding-right: 10px;
+                    text-align: start;
+                }
+
+                .flip-card-back {
+                    background-color: #007bff;
+                    color: white;
+                    transform: rotateY(180deg);
+                }
+            </style>
+
         </section>
-        <!-- End Services -->
+        <!-- Begin rotate box-2 ========================================================================================================================================
+            ========================================================================================================================================-->
 
         <hr>
 
+        <!-- travaux ================================================================================================================================================================-->
         <!-- travaux ================================================================================================================================================================-->
         <section id="portfolio-section" class="page bg-style1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="portfolio">
-                            <!-- Begin page header-->
+                            <!-- Begin page header -->
                             <div class="page-header-wrapper">
                                 <div class="container">
                                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                        <h2>Mes travaux</h2>
+                                        <h2>Mes travaux / Projets</h2>
                                         <div class="devider"></div>
-                                        <p class="subtitle">Mes travaux pendant mes formations</p>
+                                        <p class="subtitle">Mes travaux / projets pendant mes formations</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End page header-->
+                            <!-- End page header -->
+
                             <div class="portfoloi_content_area">
                                 <div class="portfolio_menu" id="filters">
                                     <ul>
-                                        <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a>
+                                        <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">Tous</a>
                                         </li>
-                                        <li><a href="#porfolio_menu" data-filter=".webDesign">web design</a></li>
+                                        <li><a href="#porfolio_menu" data-filter=".travaux">Travaux</a></li>
+                                        <li><a href="#porfolio_menu" data-filter=".projets">Projets</a></li>
                                     </ul>
                                 </div>
 
+                                <!-- Contenu du portfolio -->
                                 <div class="portfolio_content">
                                     <div class="row" id="portfolio">
-                                        <div class="col-xs-12 col-sm-4 appsDevelopment">
+                                        <div class="col-xs-12 col-sm-4 travaux">
                                             <div class="portfolio_single_content">
                                                 <img src="img/site.png" alt="title" />
                                                 <div>
-                                                    <a href="https://spitskyyy.github.io/Lueur-du-Mont/">Site pour une
-                                                        mini-entreprise</a>
-                                                    <span>Objectif : décrire l'entreprise et présenter les différentes
-                                                        bougies</span>
+                                                    <a href="https://spitskyyy.github.io/Lueur-du-Mont/">
+                                                        Site pour une mini-entreprise</a>
+                                                    <span>
+                                                        Objectif : décrire l'entreprise et présenter les différentes
+                                                        bougies
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio_content">
-                                    <div class="row" id="portfolio">
-                                        <div class="col-xs-12 col-sm-4 appsDevelopment">
+                                        <!-- =================================================================================================== -->
+                                        <div class="col-xs-12 col-sm-4 travaux">
                                             <div class="portfolio_single_content">
                                                 <img src="img/site2.png" alt="title" />
                                                 <div>
-                                                    <a href="https://vaylz.github.io/MotoOdyssey/">site pour créer des
-                                                        itinéraire moto</a>
-                                                    <span>Objectif : Pouvoir creer son itinéraire sans se compliquer la
-                                                        vie</span>
+                                                    <a href="https://vaylz.github.io/MotoOdyssey/">
+                                                        Site pour créer des itinéraires moto</a>
+                                                    <span>
+                                                        Objectif : Pouvoir créer son itinéraire sans se compliquer la
+                                                        vie
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- =================================================================================================== -->
+                                        <div class="col-xs-12 col-sm-4 projets">
+                                            <div class="portfolio_single_content">
+                                                <img src="img/Dolidarr&Atedi.png" alt="title" />
+                                                <div>
+                                                    <a
+                                                        href="https://kdrive.infomaniak.com/app/share/842954/a3f88776-105e-47f1-9e37-a14cdb9b3282">
+                                                        Dosser du projet Dolidarr & Atedi sur Debian 12</a>
+                                                    <span>
+                                                        Objectif : Déployer les deux services pour une entrepise sur
+                                                        un SI virtualiser
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- =================================================================================================== -->
+                                        <div class="col-xs-12 col-sm-4 projets">
+                                            <div class="portfolio_single_content">
+                                                <img src="img/LibreNMS&Zabbix.png" alt="title" />
+                                                <div>
+                                                    <a
+                                                        href="https://kdrive.infomaniak.com/app/share/842954/4610f1ef-8947-497a-b53f-36f4da41fc77">
+                                                        Dossier de supervision de LibreNMS et Zabbix</a>
+                                                    <span>
+                                                        Objectif : Installer et déployer les deux services de
+                                                        supervision pour pouvoir les comparers entre eux
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- =================================================================================================== -->
                                     </div>
                                 </div>
+                                <!-- Fin du contenu du portfolio -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- travaux ===============================================================================================================================================================-->
+        <!-- travaux ================================================================================================================================================================-->
+
 
         <!-- documentation =========================================================================================================================================================-->
         <section id="documentations" class="documentation-section">
@@ -471,15 +667,6 @@
                                 <!---->
                                 <!---->
                                 <div class="doc-item">
-                                    <h3>Projet - Dolibarr & Atedi</h3>
-                                    <p>Installer Dolibarr et Atedi et configuration des différents service</p>
-                                    <p>29/11/2024</p>
-                                    <a href="https://kdrive.infomaniak.com/app/share/842954/a3f88776-105e-47f1-9e37-a14cdb9b3282"
-                                        target="_blank" class="btn">Voir le Projet</a>
-                                </div>
-                                <!---->
-                                <!---->
-                                <div class="doc-item">
                                     <h3>DOC - Création d'un OpenVPN sur Ipfire</h3>
                                     <p>Configuration de IpFire pour creer un tunel OpenVPN</p>
                                     </p>
@@ -490,29 +677,20 @@
                                 <!---->
                                 <!---->
                                 <div class="doc-item">
-                                    <h3>DOC - Projet Supervision Librenms & Zabbix</h3>
-                                    <p>Installer de LibreNMS + configuration SNMP et Device</p>
+                                    <h3>DOC - Convertir une image d'une VM pour Proxmox</h3>
+                                    <p>Comment convertire une image VirtualBox pour Proxmox</p>
                                     <p>10/01/2025</p>
-                                    <a href="https://kdrive.infomaniak.com/app/drive/842954/files/1227" target="_blank"
-                                        class="btn">Voir le Projet</a>
+                                    <a href="https://kdrive.infomaniak.com/app/share/842954/17fd749f-21b8-4513-b7e5-d0221c48f2e8"
+                                        target="_blank" class="btn">Voir le Projet</a>
                                 </div>
                                 <!---->
                                 <!---->
                                 <div class="doc-item">
-                                    <h3>DOC - Convertir une image d'une VM pour Proxmox</h3>
-                                    <p>Comment convertire une image VirtualBox pour Proxmox</p>
-                                    <p>10/01/2025</p>
-                                    <a href="https://kdrive.infomaniak.com/app/share/842954/17fd749f-21b8-4513-b7e5-d0221c48f2e8" target="_blank"
-                                        class="btn">Voir le Projet</a>
-                                </div>
-                                <!---->
-                                <!---->
-                                   <div class="doc-item">
                                     <h3>DOC - Crée un server de messagerie smtp avec smtp.gmail.com</h3>
                                     <p>Crée un serveur de messagerie avec les services de Google gratuitement</p>
                                     <p>10/01/2025</p>
-                                    <a href="https://kdrive.infomaniak.com/app/share/842954/c0eb0f48-80e1-42f9-aa26-eb55e915021e" target="_blank"
-                                        class="btn">Voir le Projet</a>
+                                    <a href="https://kdrive.infomaniak.com/app/share/842954/c0eb0f48-80e1-42f9-aa26-eb55e915021e"
+                                        target="_blank" class="btn">Voir le Projet</a>
                                 </div>
                                 <!---->
                                 <!---->
@@ -520,8 +698,8 @@
                                     <h3>DOC - Créer un NAS</h3>
                                     <p>Creation d'un NAS sur un serveur Debian 12</p>
                                     <p>10/01/2025</p>
-                                    <a href="https://kdrive.infomaniak.com/app/share/842954/01208213-e142-4e5f-8b15-5054085d73bb" target="_blank"
-                                        class="btn">Voir le Projet</a>
+                                    <a href="https://kdrive.infomaniak.com/app/share/842954/01208213-e142-4e5f-8b15-5054085d73bb"
+                                        target="_blank" class="btn">Voir le Projet</a>
                                 </div>
                                 <!---->
                                 <!---->
@@ -529,8 +707,8 @@
                                     <h3>DOC - Tout pour sécuriser une Debian 12</h3>
                                     <p>Toute les astuces pour sécuriser au maximun votre server Debian 12</p>
                                     <p>10/01/2025</p>
-                                    <a href="https://kdrive.infomaniak.com/app/share/842954/3c8a4a5b-21f5-40ca-8216-b41213e13aff" target="_blank"
-                                        class="btn">Voir le Projet</a>
+                                    <a href="https://kdrive.infomaniak.com/app/share/842954/3c8a4a5b-21f5-40ca-8216-b41213e13aff"
+                                        target="_blank" class="btn">Voir le Projet</a>
                                 </div>
                                 <!---->
                                 <!---->
@@ -568,20 +746,21 @@
                                     <li><i class="fa fa-phone"></i>&nbsp; 07 86 01 02 30</li>
                                     <li><i class="fa fa-envelope"></i>nathan.sorre@ik.me</li>
                                 </ul>
-                               
+
                             </div>
                         </div>
                         <footer style="font-size: 0.8em; color: #666; padding: 20px 0;">
                             <p>
-                              © 2025 Nathan Sorre – Étudiant en BTS SIO option SISR.<br>
-                              Site réalisé dans le cadre de mes études.<br>
-                              Contact : <a href="mailto:nathan.sorre@ik.me">nathan.sorre@ik.me</a><br>
+                                © 2025 Nathan Sorre – Étudiant en BTS SIO option SISR.<br>
+                                Site réalisé dans le cadre de mes études.<br>
+                                Contact : <a href="mailto:nathan.sorre@ik.me">nathan.sorre@ik.me</a><br>
                             </p>
                             <p>
-                              Ce site est un projet personnel et n'a pas de vocation commerciale.<br>
-                              Les données personnelles, si collectées, sont utilisées uniquement dans le cadre de ce projet et ne sont pas transmises à des tiers.<br>
+                                Ce site est un projet personnel et n'a pas de vocation commerciale.<br>
+                                Les données personnelles, si collectées, sont utilisées uniquement dans le cadre de ce
+                                projet et ne sont pas transmises à des tiers.<br>
                             </p>
-                          </footer>
+                        </footer>
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
             </div>
@@ -604,7 +783,7 @@
         <!-- Theme JS -->
         <script src="js/theme.js"></script>
 
-    
+
         <!-- Video hack =========================================================================================================================================================-->
         <script>
             document.getElementById("playIntroVideo").addEventListener("click", function (event) {
